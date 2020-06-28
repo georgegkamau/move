@@ -1,0 +1,182 @@
+.devise-main {
+   padding: 30px;   
+   width: 100%;
+   text-align: center;
+   background-color: #fff;
+}
+
+.devise-main-inner { 
+    display: inline-block;  
+    vertical-align: top;
+    min-width: 500px;
+}
+  
+.login-container {  
+    max-width: 650px;   
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,2);
+}
+
+  
+.devise-main-inner .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 6px;
+    padding: 5px; 
+}
+
+.field_with_errors {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.devise-main-inner .row p {
+  text-align: center;
+  margin-bottom: 0; 
+}
+ 
+
+.deposit-inner-middle .card-errors {
+    background-color: #00b9ff;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+    width: 100%; 
+}
+
+
+.devise-main-inner input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  #apartment_detail_description {
+    border: solid red 2px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+ 
+
+.devise-main-inner input[type=email], input[type=password] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.devise-main-inner input[type=number] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+  
+.devise-main-inner label {
+    margin-bottom: 10px;
+    display: block; 
+}
+  
+ 
+.devise-main-inner #btn {
+    background-color: #40089a;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .devise-main-inner #btn:hover {
+    background-color: #fff;
+    padding: 11px;
+    color: #40089a;
+    border: solid 1px #40089a;
+  }
+  
+  .devise-main-inner a {
+    color: #2196F3;
+  }
+  
+  .devise-main-inner hr {
+    border: 1px solid lightgrey;
+  }
+  
+  .deposit-inner-middle span.price {
+    float: right;
+    color: grey;
+  }
+
+.devise-shared  {
+  text-align: center; 
+  padding: 5px;
+  width: 100%;
+text-align: center;
+}
+
+.devise-shared-inner  {
+  text-align: center; 
+  padding: 5px;
+  display: inline-block;  
+  vertical-align: top; 
+  width: 100%;
+}
+
+.devise-shared a {
+  text-decoration: none; 
+  background-color: #00b9ff; 
+  color: #fff; 
+  display: block;  
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.devise-shared a:hover {
+  background-color: #fff;
+  color: #00b9ff;
+  padding: 11px;
+  border: solid 1px #00b9ff;
+}
+ 
+   
+@media only screen and (max-width: 750px) {
+  
+ 
+}
+
+
+@media only screen and (max-width: 450px) {
+  .devise-main {
+    padding: 5px; 
+  }
+  .devise-main-inner { 
+    display: inline;  
+    vertical-align: top;
+    min-width: 260px;
+}
+  
+}

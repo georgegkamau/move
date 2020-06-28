@@ -1,0 +1,42 @@
+<div class="devise-main">
+    <div class="devise-main-inner">
+        <div class="login-container">
+            <div class="login">
+                <h4>LOG IN</h4>
+            </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="row">
+                <%= devise_error_messages! %>
+            </div>
+            
+            <div class="row"> 
+                <%= f.label :email %> 
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "me@email.com" %>
+            </div> 
+
+            <div class="row">
+                <%= f.label :password %> 
+                <%= f.password_field :password, autocomplete: "current-password", placeholder: "minimum 6 characters" %>
+            </div>
+
+            <% if devise_mapping.rememberable? -%>
+            <div class="row">
+              <span style="margin-right:20px">
+                <%= f.check_box :remember_me %>
+              </span>
+              <span style="margin-right:20px">
+                <%= f.label :remember_me %>
+              </span>
+            </div>
+            <% end -%>
+
+            <div class="row">
+                <%= f.submit "Log in", id:'btn' %>
+            </div>
+            <% end %>
+            <div >
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>
+    </div>
+</div>

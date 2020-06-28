@@ -1,0 +1,182 @@
+.footer { 
+    margin-top: 150px; 
+    background-color:  #40089a;
+}
+ 
+
+.footer-top {
+    display: flex;
+    margin-top: 150px;  
+}
+
+ 
+.footer-top > div { 
+    width: 30%;
+    min-height: 300px;
+    vertical-align: top;
+    margin: 2%; 
+    padding: 30px; 
+
+}
+
+.footer-logo {
+    text-align: left;
+}
+
+.footer-logo a {
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo a:hover { 
+    color: #00b9ff;
+}
+
+.footer-top .title { 
+    display: block;
+    color: #ddd;
+    font-size: 1rem; 
+    font-weight: 700;
+}
+
+.footer-top .info {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 34px;
+    font-weight: 400;
+    display: block;
+}
+
+.footer-adress {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-adress-inner {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.footer-contact {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-contact-inner { 
+    height: 100%;  
+    display: inline-block;  
+}
+ 
+.footer-contact ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.footer-contact li {
+    float: left; ;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.footer-middle {
+ 
+}
+
+.footer-middle-left {
+
+}
+
+.footer-middle-left  a { 
+}
+
+.footer-middle-inner {  
+}
+
+.footer-middle ul { 
+}
+
+.footer-middle li { 
+}
+
+
+.footer-lower {
+    min-width: 200px;
+    padding: 20px 0 40px 0; 
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.copyright {
+    color: grey;
+}
+
+.footer-lower a { 
+    color: grey;
+    text-decoration: none;
+}
+
+.footer-lower a:hover { 
+    color: #00b9ff;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .footer {
+        width: 100%;
+    }
+    
+    .footer-top {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-top > div {
+        padding-top: 30px;
+        width: 100%;
+        margin: 0;
+        min-height: 200px;
+    }
+
+    div .footer-logo{ 
+        display: inline-block;  
+        text-align: center;
+        border-bottom: solid 1px #ddd;
+    }
+
+    .footer-adress { 
+        display: inline-block;
+        border-bottom: solid 1px #ddd;
+    }
+
+    .footer-contact { 
+        display: inline-block;
+    
+    }
+
+    .footer-contact div {
+        display: inline-block;
+        text-align: center;
+    }
+    .footer-contact-inner {
+        display: inline-block; 
+    }
+
+    .footer-lower { 
+        padding: 30px; 
+        padding-bottom: 70px; 
+    }
+}
+
+@media screen and (max-height: 450px) {
+
+}

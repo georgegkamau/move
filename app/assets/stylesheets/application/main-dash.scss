@@ -1,0 +1,121 @@
+.main-dash  { 
+    background-color: #40089a;
+    text-align: center;
+    min-height: 50px;
+}
+
+.main-dash li {
+    float: right;
+    padding-right: 15px;
+}
+
+.main-dash ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+}
+  
+ 
+  .main-dash .title {
+    display:block; 
+    font-weight: 700;
+    color: #ddd;
+    font-size: 14px;
+    padding-top: 10px;
+    line-height: 0;
+  }
+  
+  .main-dash .value {
+    padding-top: 5px;
+    color: #fff;
+    display:block; 
+    font-size: 16px;
+  }
+
+  .main-dash .fa-bars {
+    color:  #fff;
+    font-size: 30;
+    font-weight: 700;
+  }
+
+  .main-dash #account a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-left:20px
+}
+
+.main-dash #account a:hover {
+  color: #00b9ff;
+}
+
+.main-dash .fa-location-arrow {
+  color: #fff; 
+  text-decoration: none;
+  font-size: 30px;
+}
+ 
+.main-dash:hover .fa-location-arrow {
+   color: #00b9ff;
+}
+
+#account #small {
+  display: none;
+}
+
+ 
+
+ 
+
+ 
+
+@media only screen and (max-width: 750px) {
+ 
+}
+ 
+  @media only screen and (max-width: 750px) {
+    .main-dash li {
+      float: right;
+      padding-right: 3px;
+    }
+
+    #account #large {
+      display: none;
+    }
+
+    #account #small {
+      display: block;
+    }
+
+    .main-dash li {
+      font-size: 13px;
+      width: 40px;
+      overflow-x: scroll;
+      margin-left: 5px;
+  //     border: solid 2px red;
+    }
+
+    .main-dash #account {
+      float: left;
+      padding-left: 0px; 
+      overflow: visible;
+      margin-left: 0px;
+    }
+
+    .main-dash #account a {
+      font-weight: 400;  
+      padding: 0;
+  }
+
+  .main-dash .fa-location-arrow { 
+    font-size: 35px;
+  }
+
+
+ 
+  
+  
+}
+    

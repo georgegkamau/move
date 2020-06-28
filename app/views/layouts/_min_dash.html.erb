@@ -1,0 +1,29 @@
+  <% if current_user %>
+  <% if current_user %>
+  <div class="main-dash">
+    <ul>
+      <li>
+        <span class="title"> Balance </span>
+        <span class="value"> 333 </span>
+      </li>
+      <li>
+        <span class="title"> Projects </span>
+        <span class="value"> 333 </span>
+      </li>
+      <li>
+        <span class="title"> Investments </span>
+        <span class="value"> 333 </span>
+      </li>
+      <li>
+        <span class="title"> Watchlist </span>
+        <span class="value"> 333 </span>
+      </li>
+      <li id="account" style="float:left;">
+          <span id="small"><%=  link_to raw('<i class="fa fa-location-arrow"></i> '), root_path  %> </span>
+          <span id="large"><%=  link_to raw('Dashboard ' + ' <i class="fa fa-location-arrow"></i> '), root_path  %> </span> 
+           
+      </li> 
+    </ul> 
+  </div>
+  <% end %>
+  <% end %>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moveino</title>
+      <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path(''), :rel => 'icon', :type => 'image/png' %>
+    <meta charset="UTF-8">
+    <meta name="description" content="we are transforming how we move in and out of apartments">
+    <meta name="keywords" content="  ">
+    <meta name="author" content="movino llc">
+    <meta name="keywords" content="rent,apartments, lease, landlord, tenant, airbnb, move, in, out,destinations, neighbor" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag 'application', 'https://js.stripe.com/v2/', 'data-turbolinks-track': 'reload' %> 
+    <%
+=begin%>
+ <%= tag :meta, name: "stripe-public-key", content: Rails.application.credentials.stripe[:stripe_public_key] %>   
+<%
+=end%>
+ 
+   
+</head> 
+  <body>
+
+    <!-- -->  
+    <div class="top-nav">
+      <div class="topnav-left">
+        <%= link_to 'moveino', root_path %>
+      </div>
+      <div class="topnav-middle">
+      <%= render 'layouts/nav'%> 
+      </div>
+      <div class="topnav-right">
+        <% if current_user %>
+            <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>  
+        <% else %> 
+            <%=  link_to raw('<i class="fa fa-sign-in"></i> ')  + "     Sign in", new_user_session_path %> 
+        <% end %> 
+        <span> <i class="fa fa-bars"></i> </span>
+      </div>  
+    </div> 
+  
+    <!-- -->
+    <div id="mySidenav" class="min-nav">
+      <span style="padding:10px"></span>
+      <a href="javascript:void(0)" class="closebtn" >&times;</a>
+      <%= render 'layouts/nav'%> 
+    </div>
+    
+
+    <!-- -->
+    <%= render 'layouts/min_dash'%> 
+
+    <!-- -->
+    <% if notice %>
+      <div class="main-notice">
+        <p id="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    
+    
+    <!-- --> 
+    <%= yield %>
+
+    <!-- -->
+    <%= render 'layouts/footer'%>   
+
+    
+
+
+  </body>
+</html>
+

@@ -1,0 +1,279 @@
+.project-show {
+    
+}
+
+.header-title .city {
+    font-weight: 700; 
+    font-size: 1.5rem;
+}
+
+.header-title .title {
+    font-size: 15px; 
+    color: grey;
+}
+ 
+.project-show {
+    padding: 0px 30px;
+}
+
+.project-image-large {
+    width: 100%;
+    max-height: 550px;
+    overflow: hidden; 
+}
+
+.project-image-large img{
+    width: 100%; 
+}
+
+.project-image-small { 
+    display: flex;
+    flex-wrap: wrap;   
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.125);
+    transition: 0.3s;
+}
+
+.each-project-image-small { 
+  width: 100px;
+  max-height: 100px;
+  margin: 5px;
+  border-radius: 6px; 
+  overflow: hidden; 
+}
+
+.each-project-image-small img {
+    width: 100%;
+    border-radius: 6px;
+}
+ 
+
+.project-middle-div { 
+    margin: 20px 0; 
+    width: 100%; 
+    border-bottom: solid 1px #ddd;
+}
+ 
+.project-top, .project-middle {  
+}
+
+.project-top-left, .project-middle-left {
+    display: inline-block;
+    width: 46%;
+    vertical-align: top; 
+    margin-left: 3%;
+}
+
+.project-middle-left p {
+    padding: 15px;
+}
+
+
+.project-top-right, .project-middle-right {
+    display: inline-block;
+    width: 46%;
+    vertical-align: top; 
+    margin-left: 2%;
+}
+
+
+ 
+.project-top-right {
+    color: rgba(3, 19, 39, 0.38); 
+    border: 1px solid rgba(0,0,0,.125);
+    transition: 0.3s;
+    vertical-align: top;
+}
+
+.project-show .title {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    color: rgba(3, 19, 39, 0.38);
+    width: 70%;
+    margin: 0 auto;
+    color: #40089a;
+    border-bottom: solid 3px #40089a;
+}
+
+.project-top-right-inner { 
+    padding: 0px 5px;
+}
+
+.project-right-line {
+    border-bottom: solid 2px rgba(3, 19, 39, 0.38); 
+}
+
+.project-right-line div {
+    display: inline-block;
+    width: 49%; 
+    padding: 10px;
+}
+
+.project-right-line .left {
+    text-align: left;
+    color: rgba(3, 19, 39, 0.38);
+    vertical-align: top;
+}
+
+.project-right-line .right {
+    text-align: right;
+    color: rgba(3, 19, 39, 0.38);
+    vertical-align: top;
+}
+
+.project-middle {
+    margin: 30px 0;
+}
+
+.project-middle-left, .project-middle-right {
+    color: rgba(3, 19, 39, 0.38); 
+    border: 1px solid rgba(0,0,0,.125);
+    transition: 0.3s;
+    vertical-align: top;
+}
+
+.project-middle-left {
+    padding: 0 5px;
+    max-height: 700px;
+    overflow: hidden;
+}
+
+
+.project-middle-right {
+    text-align: center;
+}
+
+.project-middle-right a {
+    text-decoration: none;
+}
+
+
+.project-middle-right .left { 
+    display: block;  
+    padding: 10px; 
+}
+
+.project-middle-right .right { 
+    display: block;
+    padding: 15px; 
+    vertical-align: top;
+}
+
+.project-middle-right .field {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    // padding: 6px;
+}
+
+.project-middle-right #invest_investment_amount {
+    padding: 6px;
+    width: 100%;
+    // border-radius: 25px;
+    border: solid 1px #40089a;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.project-middle-right #invest_investment_amount:focus {
+    outline-width: 0;
+}
+
+.project-middle-right input:hover {
+    overflow: visible;
+    background-color: #ddd;
+}
+
+.project-middle-right .project-details {
+    border: solid 1px #00b9ff;
+    background-color: #00b9ff;
+    color: #fff;
+    width: 80%;
+    padding: 6px;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.project-middle-right .project-details:hover {
+    border: solid 1px #00b9ff;
+    background-color: #fff;
+    color: #00b9ff
+  
+}
+
+.project-middle-right #invest { 
+    border: solid 1px #40089a;
+    background-color:  #40089a;
+    color: #fff;
+    width: 90%;
+    padding: 6px;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-weight: 600; 
+}
+
+.project-middle-right #invest:hover { 
+    background-color: #fff;
+    color:  #40089a; 
+}
+
+
+.main-divider {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #40089a;
+    padding: 60px;
+    margin: 60px 0;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .project-top-left {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+
+    }
+
+    .project-top-right {
+        display: block;
+        width: 90%;
+        margin: 40px auto;
+
+    }
+
+    .project-middle-left {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .project-middle-right {
+        display: block;
+        width: 90%;
+        margin: 40px auto;
+    }
+ 
+}
+
+
+@media only screen and (max-width: 450px) {
+    .project-show {
+        padding: 0px 5px;
+    }
+
+    .project-top-left, .project-top-right { 
+        width: 100%; ;
+    } 
+
+    .project-middle-left, .project-middle-right { 
+        width: 100%; 
+    }
+  
+}
+

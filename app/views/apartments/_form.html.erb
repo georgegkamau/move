@@ -1,0 +1,42 @@
+<%= form_with(model: apartment, local: true) do |form| %>
+   <div class="row" style="display:block;">
+  <% if apartment.errors.any? %>
+    <div id="error_explanation"> 
+      <ul>
+      <% apartment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+
+  <div class="row">
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address, placeholder: "123 moveino lane", required: true %>
+  </div>
+
+  <div class="row">
+    <%= form.label :apt %>
+    <%= form.text_field :apt, placeholder: "AF1-44" %>
+  </div>
+
+  <div class="row">
+    <%= form.label :city %>
+    <%= form.text_field :city, placeholder: "Philadelpia", required: true %>
+  </div>
+
+  <div class="row">
+    <%= form.label :state %>
+    <%= form.text_field :state, placeholder: "PA", required: true %>
+  </div>
+
+  <div class="row">
+    <%= form.label :zip_code %>
+    <%= form.number_field :zip_code, placeholder: "00000", required: true %> 
+  </div>
+ 
+ <div class="row">
+     <%= form.submit 'submit', id: 'btn' %> 
+  </div>
+<% end %>

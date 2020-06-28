@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apartment Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Housing type</th>
+      <th>Rent</th>
+      <th>Deposit</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Available</th>
+      <th>Sq foot</th>
+      <th>Description</th>
+      <th>Washer dryer</th>
+      <th>Laundry</th>
+      <th>Pets</th>
+      <th>Street parking</th>
+      <th>Parking</th>
+      <th>Dishwasher</th>
+      <th>Central air</th>
+      <th>Swimming pool</th>
+      <th>Gym</th>
+      <th>User</th>
+      <th>Apartment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartment_details.each do |apartment_detail| %>
+      <tr>
+        <td><%= apartment_detail.housing_type %></td>
+        <td><%= apartment_detail.rent %></td>
+        <td><%= apartment_detail.deposit %></td>
+        <td><%= apartment_detail.bedrooms %></td>
+        <td><%= apartment_detail.bathrooms %></td>
+        <td><%= apartment_detail.available %></td>
+        <td><%= apartment_detail.sq_foot %></td>
+        <td><%= apartment_detail.description %></td>
+        <td><%= apartment_detail.washer_dryer %></td>
+        <td><%= apartment_detail.laundry %></td>
+        <td><%= apartment_detail.pets %></td>
+        <td><%= apartment_detail.street_parking %></td>
+        <td><%= apartment_detail.parking %></td>
+        <td><%= apartment_detail.dishwasher %></td>
+        <td><%= apartment_detail.central_air %></td>
+        <td><%= apartment_detail.swimming_pool %></td>
+        <td><%= apartment_detail.gym %></td>
+        <td><%= apartment_detail.user %></td>
+        <td><%= apartment_detail.apartment %></td>
+        <td><%= link_to 'Show', apartment_detail %></td>
+        <td><%= link_to 'Edit', edit_apartment_detail_path(apartment_detail) %></td>
+        <td><%= link_to 'Destroy', apartment_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apartment Detail', new_apartment_detail_path %>
+ 

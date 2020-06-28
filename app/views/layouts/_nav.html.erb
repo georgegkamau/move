@@ -1,0 +1,26 @@
+
+    <ul class="nav-link">
+      <li><%= link_to 'Tenants', apartments_path %> </li>
+      <li><%= link_to 'Landlords', apartments_path %> </li>
+      <% if current_user %>
+        <li >   
+          <%=  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() %> 
+        </li>
+        
+        <% if current_user %>
+          <li >  
+            <%= link_to 'Account', root_path %> 
+          </li> 
+          <li > 
+            <%= link_to 'Add money', root_path %>
+          </li>  
+        <% end %>
+      <% end %>
+      <li >  <a href="#news">News</a></li>
+      <li> <a href="#contact">Contact</a></li> 
+      <li class="logout">
+          <% if current_user %>
+            <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>  
+        <% end %> 
+      </li>
+    </ul>

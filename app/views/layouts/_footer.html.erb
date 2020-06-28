@@ -1,0 +1,67 @@
+<footer>
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <span class="logo"> <%= link_to 'moveino', root_path %>
+            </div>
+            <div class="footer-adress">
+                <div class="footer-adress-inner"> 
+                <span class="info"> 
+                    3637 Market st <br>
+                    Philadelphia, Pa <br>
+                    19104
+                </span>
+                <span class="title"> 215.519.6288 </span>
+            </div>
+            </div>
+            <div class="footer-contact">
+                 <div class="footer-contact-inner">
+                <ul> 
+                <li> 
+                    <%= link_to 'http://www.fb.com/sportstwitsapp', target: "_blank" do %>
+                        <i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px;color:#fff;text-align:left;padding-left:2px;"></i>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to 'http://www.instagram.com/sportstwitsapp', target: "_blank" do %>
+                        <i class="fa fa-instagram" aria-hidden="true" style="font-size:30px;color:#fff;text-align:left;padding-left:2px;"></i> 
+                    <% end %> 
+             </li>
+                <li>
+                    <%= link_to 'http://www.twitter.com/sportstwitsapp' , target: "_blank" do %>
+                        <i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px;color:#fff;text-align:left;padding-left:2px;"></i>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://www.youtube.com/c/sportstwitsapp' , target: "_blank" do %>
+                        <i class="fa fa-youtube-square" aria-hidden="true" style="font-size:30px;color:#fff;text-align:left;padding-left:2px;"></i>
+                    <% end %>
+                </li>
+            </ul>
+              </div>   
+            </div>
+        </div>
+
+
+        <div class="footer-middle">
+            <div class="footer-middle-left"> 
+            </div>
+            <div class="footer-middle-inner"> 
+            </div>
+        </div>
+
+       
+        <div class="footer-lower">
+            <small class="copyright">   </small>
+            <br>
+            <small> <i class="copyright"> Copyright &copy; <%= Date.today.year %> moveino  All rights reserved</i></small>
+            <br>
+            <small> <i class="copyright">By using our website you agree to the use of cookies in accordance with our tou policy</i></small>
+            <br>
+            <%= link_to 'Faq', main_faq_path %>  &nbsp&nbsp <%= link_to 'Help', main_help_path %>  &nbsp&nbsp <%= link_to 'Contact', main_contact_path %> &nbsp&nbsp <%= link_to 'Legal', main_legal_path %> &nbsp&nbsp <%= link_to 'Privacy', main_privacy_path %> 
+        </div> 
+     
+
+   
+    </div>
+</footer>

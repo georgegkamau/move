@@ -1,0 +1,55 @@
+.min-nav {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #40089a;
+    overflow-x: hidden;
+    transition: 0.60s;
+    padding-top: 0px;
+    text-align:center;
+  }
+  
+  .min-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  
+  }
+  
+  .min-nav a:hover{
+    color: #00b9ff;
+  }
+  
+  .min-nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .main-notice {
+    text-align: center;
+    background-color: #00b9ff;
+    color: #fff; 
+    padding: 10px;
+  }
+
+  #notice {
+    color: #40089a;
+  }
+  
+  @media only screen and (max-width: 750px) {
+ 
+  }
+ 
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

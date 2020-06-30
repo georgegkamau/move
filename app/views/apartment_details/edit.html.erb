@@ -1,11 +1,20 @@
-
- <div class="header">
-     <div class="header-line">
-         <div class="header-title">
-             <h3> Add an apartment </h3>
-         </div>
-     </div>
- </div>
+<div class="header">
+    <div class="header-top">
+      <span>  </span>
+    </div>
+    <div class="header-middle"> 
+        <div class="header-middle-left">
+            You almost done!  
+        </div>
+        <div class="header-middle-right">
+          <% if current_user %> 
+            <% if current_user.apartments.count > 0 %> 
+            <%=  link_to raw(' go back '+ ' <i class="fa fa-edit"></i> ') , apartment_path(params[:id]) %>  
+          <% end %> 
+          <% end %> 
+        </div>
+    </div>
+</div>
 
  <div class="apt-new">
      <div class="apt-new-inner">

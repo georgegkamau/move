@@ -1,149 +1,104 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Apartments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Street</th>
-      <th>Apt</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip code</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @apartments.each do |apartment| %>
-      <tr>
-        <td><%= apartment.street_address %></td>
-        <td><%= apartment.apt %></td>
-        <td><%= apartment.city %></td>
-        <td><%= apartment.state %></td>
-        <td><%= apartment.zip_code %></td>
-        <td><%= apartment.user %></td>
-        <td><%= link_to 'Show', apartment %></td>
-        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
-        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Apartment', new_apartment_path %>
-
-
 <div class="header">
-  <div class="header-line">
-    <div class="header-title">
-    <h3> Apartments </h3>  
-    </div> 
-    <div class="header-add" > 
-        <% if current_user %> 
-           <%=  link_to raw('New '+ ' <i class="fa fa-plus-square"></i> ') , new_apartment_path() %>  
-        <% end %> 
-    </div>  
-  </div>
+    <div class="header-top">
+      <span> <%= Apartment.all.count %> </span>
+    </div>
+    <div class="header-middle"> 
+        <div class="header-middle-left">
+            Apartments  
+        </div>
+        <div class="header-middle-right">
+          <% if current_user %> 
+            <% if current_user.apartments.count > 0 %> 
+            <%=  link_to raw('New '+ ' <i class="fa fa-plus-square"></i> ') , new_apartment_path() %>  
+          <% end %> 
+          <% end %> 
+        </div>
+    </div>
 </div>
-
  
 
+
 <div class="apartment-container">
-  <% @apartments.each do |apartment| %>
-    <div class="each-apartment"> 
-      <div class="each-apartment-header"> 
-        <div class="each-apartment-header-left"> 
-          <%= apartment.city %> <span class="apt-show-title "><%= apartment.state %></span>
-        </div>
-        <div class="each-apartment-header-right"> 
-          <i class="fa fa-bookmark"></i>
-        </div>
-      </div>
-
-      <div class="each-apartment-image"> 
-           <%
-=begin%>
- <% if apartment.images.attached? %> 
-                <%= image_tag(apartment.images.first) %> 
-                <% apartment.images.each do |image| %>
-                  <!--<%= link_to image_tag(image, style:"width:100%" , id: 'userShowHeaderImg' ), apartment_path(apartment.id)%> -->
-                <% end %> 
-            <% end %> 
-<%
-=end%>
-      </div>
-
-      <div class="each-apartment-body"> 
-        <div class="apartment-type-loan">
-          <ul>
-            <li style="float:left;">
-              <span class="apartment-amount-title"> Rent/month </span>
-              <span class="apartment-amount"> $ <%= apartment.id %></span>
-            </li>
-            <li style="float:right;">
-              <span class="apartment-apartment-title"> Property</span>
-              <span class="apartment-apartment"> <%= apartment.id %></span>
-            </li>
-          </ul> 
+    <% @apartments.each do |apartment| %>
+    <div class="each-apartment">
+        <div class="each-apartment-header">
+            <div class="each-apartment-header-left">
+                <%= apartment.city %> <span class="apt-show-title "><%= apartment.state %></span>
+            </div>
+            <div class="each-apartment-header-right">
+                <i class="fa fa-bookmark"></i>
+            </div>
         </div>
 
-        <div class="apartment-raised"> 
-          <div class="meter">
-            <div style="width:100%"></div> 
-          </div>  
-            <span style="text-align:center"> raised &nbsp $ <%= apartment.id %> </span>   
-        </div>
-
-        <div class="each-apartment-body-bottom"> 
-          <div class="apartment-bttns"> 
-            <%= link_to apartment_path(apartment.id) do %>
-              <div class="apartment-details"> Details </div>
+        <div class="each-apartment-image"> 
+            <% if apartment.apartment_detail.pictures.attached? %>
+            <%= image_tag(apartment.apartment_detail.pictures.first) %>
+            <% apartment.apartment_detail.pictures.each do |image| %>
+            <%= link_to image_tag(image, style:"width:100%" , id: 'userShowHeaderImg' ), apartment_path(apartment.id)%> 
             <% end %>
-            <% unless @is_myapartment%>
-            <%= link_to apartment_path(apartment.id) do %>
-              <div class="apartment-invest"> Invest </div> 
             <% end %> 
-            <% end %>
-          </div>
         </div>
-      </div> 
+
+        <div class="each-apartment-body">
+            <div class="apartment-type-cost">
+                <ul>
+                    <li style="">
+                        <span class="apartment-amount-title"> Property</span>
+                        <span class="apartment-value"> <%= apartment.id %></span>
+                    </li>
+                    <li style="">
+                        <span class="apartment-amount-title"> Rent/month </span>
+                        <span class="apartment-value"> $ <%= apartment.id %></span>
+                    </li>
+                    <li style="">
+                        <span class="apartment-amount-title"> available</span>
+                        <span class="apartment-value"> <%= apartment.id %></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="apartment-description">
+                <div class=" ">
+                      <%= apartment.apartment_detail.description %>
+                </div> 
+            </div>
+
+            <div class="each-apartment-body-bottom">
+                <div class="apartment-bttns">
+                    <%= link_to apartment_path(apartment.id) do %>
+                    <div class="apartment-details"> Details </div>
+                    <% end %> 
+                </div>
+            </div>
+        </div>
     </div>
-  <% end %>
+    <% end %>
 </div>
 
 
 
 
 <div class="apartment-index">
-    <div class="apartment" >
-    <% @apartments.each do |apartment| %>
-    <%
+    <div class="apartment">
+        <% @apartments.each do |apartment| %>
+        <%
 =begin%>
- <% if current_user %>
-    <% unless apartment.is_myapartment(apartment.id, current_user.account ) %> 
-<%
+        <% if current_user %>
+        <% unless apartment.is_myapartment(apartment.id, current_user.account ) %>
+        <%
 =end%>
-    
- 
 
-    
 
- 
-    <% end %>
-    <%
+
+
+
+
+        <% end %>
+        <%
 =begin%>
- <% end %>
-    <% end %> 
-<%
+        <% end %>
+        <% end %>
+        <%
 =end%>
-    </div>  
+    </div>
 </div>
- 
-
- 
-
-

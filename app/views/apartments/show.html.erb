@@ -1,3 +1,7 @@
+
+
+<div class="apt-show-container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -30,18 +34,20 @@
     <%= @apartment.user %>
 </p>
 
-
-<div class="apt-header">
-   <div style="display:block" >
-        <span class="apt-show-title "> Apartment </span> 
+<div class="header">
+    <div class="header-top">
+      <span> $ &nsbp <%= @apartment.apartment_detail.rent %> </span>
+    </div>
+    <div class="header-middle"> 
+        <div class="header-middle-left">
+            <%= @apartment.street_address %> &nbsp <%= @apartment.city %>   
         </div>
-    <div class="apt-header-line"> 
-        <div class="apt-header-left">
-            <%= @apartment.street_address %> &nbsp <%= @apartment.city %>  
-        </div>
-
-        <div class="apt-header-right">
-          &nbsp $700 
+        <div class="header-middle-right">
+          <% if current_user %> 
+            <% if current_user.apartments.count > 0 %> 
+            <%=  link_to raw('New '+ ' <i class="fa fa-plus-square"></i> ') , new_apartment_path() %>  
+          <% end %> 
+          <% end %> 
         </div>
     </div>
 </div>
@@ -49,7 +55,23 @@
 
 <div class="apt-show">
     <div class="apt-show-inner">
-        <div class="apt-show-left"> ll 
+        <div class="apt-show-left"> 
+                    <div class="project-top-left">
+            <% if @apartment.apartment_detail.pictures.attached? %>
+            <div class="project-image-large">
+                <%= image_tag(@image) %>
+            </div>
+            <div class="project-image-small">
+                <% @apartment.apartment_detail.pictures.each_with_index do |image, index| %>
+                <div class="each-project-image-small">
+                    <div class="slide" id="<%=index%>">
+                        <%= image_tag(image) %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+            <% end %>
+        </div> 
         
         </div>
 

@@ -1,28 +1,30 @@
-.project-new {
-    padding: 0 30px;   
-    width: 100%;
-    // text-align: center;
-    background-color: #fff;
- }
+.apt-new {
+  padding: 0 30px;   
+  width: 100%; 
+  background-color: #fff; 
+}
+
+.apt-new-inner { 
+display: flex; 
+}
+
+.apt-new-left {  
+min-width: 300px;
+max-width: 7500px;
+vertical-align: top;
+margin: 0 2%;  
+flex-grow: 3;  
+}
  
- .project-new-inner { 
-     display: inline-block;  
-     vertical-align: top;
-     min-width: 500px;
- }
    
  .new-container {  
-     max-width: 650px;   
-     background-color: #f2f2f2;
-     padding: 20px;
-     border: 1px solid lightgrey;
-    //  border-radius: 3px;
-    //  margin: 20px auto;
-    //  box-shadow: 0 4px 8px 0 rgba(0,0,0,2);
+     width: 100%;    
+     padding: 20px;  
+     border: 1px solid #ccc;
  }
  
    
-.project-new-inner .row {
+.apt-new-left .row {
      display: -ms-flexbox; /* IE10 */
      display: flex;
      -ms-flex-wrap: wrap; /* IE10 */
@@ -31,13 +33,13 @@
      padding: 5px; 
  }
  
- .project-new-inner .row p {
+ .apt-new-left .row p {
    text-align: center;
    margin-bottom: 0; 
  }
   
  
- .project-new-inner .card-errors {
+ .apt-new-left .card-errors {
      background-color: #00b9ff;
      color: #fff;
      padding: 7px;
@@ -46,41 +48,41 @@
  }
  
 //  description
-.project-new-inner input[type=text], #project_description {
+.apt-new-left input[type=text], #project_description {
      width: 100%; 
      padding: 12px;
      border: 1px solid #ccc;
      border-radius: 3px;
    }
  
-.project-new-inner input[type=email], input[type=password] {
+.apt-new-left input[type=email], input[type=password] {
      width: 100%; 
      padding: 12px;
      border: 1px solid #ccc;
      border-radius: 3px;
  }
  
- .project-new-inner  input[type=number] {
+ .apt-new-left  input[type=number] {
    width: 100%; 
    padding: 12px;
    border: 1px solid #ccc;
    border-radius: 3px;
  }
 
- .project-new-inner  input[type=file] {
+ .apt-new-left  input[type=file] {
     width: 100%; 
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
    
- .project-new-inner label {
+ .apt-new-left label {
      margin-bottom: 1px;
      display: block; 
  }
    
   
-.project-new-inner  #btn {
+.apt-new-left  #btn {
      background-color: #40089a;
      color: white;
      padding: 12px;
@@ -92,17 +94,27 @@
      font-size: 17px;
    }
    
-.project-new-inner  #btn:hover {
+.apt-new-left  #btn:hover {
      background-color: #fff;
      padding: 11px;
      color: #40089a;
      border: solid 1px #40089a;
    }
    
-.project-new-inner  a {
+.apt-new-left  a {
      color: #2196F3;
    }
    
+.apt-new-right {  
+  vertical-align: top;
+  min-width: 250px; 
+  min-height: 300px;
+  vertical-align: top;
+  margin: 0 2%; 
+  flex-grow: 1;   
+}
+
+
    .devise-main-inner hr {
      border: 1px solid lightgrey;
    }
@@ -147,22 +159,39 @@
    padding: 11px;
    border: solid 1px #00b9ff;
  }
+
+
   
     
- @media only screen and (max-width: 750px) {
+ @media only screen and (max-width: 768px) {
+      .apt-new-left { 
+     display: block;   
+     min-width: 260px;
+ }
+ .apt-new-inner { 
+  display: block; 
+  }
+  
+  .apt-new-right {  
+    display: block;  
+    margin-top: 20px;   
+  }
    
   
  }
  
  
  @media only screen and (max-width: 450px) {
-    .project-new {
+    .apt-new {
      padding: 5px; 
    }
-   .project-new-inner { 
-     display: inline;  
-     vertical-align: top;
-     min-width: 260px;
- }
+//    .apt-new-left { 
+//      display: block;   
+//      min-width: 260px;
+//  }
+//  .apt-new-inner { 
+//   display: block; 
+//   }
+  
    
  }

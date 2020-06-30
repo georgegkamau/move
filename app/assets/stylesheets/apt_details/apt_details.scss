@@ -1,0 +1,100 @@
+// Place all the styles related to the apartment_details controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#apartment_detail_housing_type { 
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#details-date {
+    padding: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+    margin: 11px;
+}
+
+#details-date select {
+    padding-left: 10px;
+    margin-left: 10px;  
+}
+
+.detail-box { 
+    padding: 0 15px;
+    border-radius: 3px;
+    margin: 0px 10px; 
+    border:  solid 1px #ccc; 
+}
+
+.detail-box-line { 
+    display: flex;
+    width: 100%;
+    padding: 5px 0px;
+    border-bottom:  solid 1px #ccc;
+} 
+
+.detail-box-left {  
+    width: 49%;
+}
+
+.detail-box  label { 
+    display: inline;
+    padding: 20px 10px; 
+}
+
+.detail-box-right { 
+    width: 49%;
+}
+
+@media only screen and (max-width: 768px) {
+    #details-date label {
+        display: block;
+        width: 100%;
+    }
+
+    #details-date {
+        padding: 15px 7px;
+    }
+
+    #details-date select {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 450px) { 
+    #details-date {
+        padding: 15px 7px;
+    }
+
+    #details-date select {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+    .detail-box-line { 
+        display: block;
+        border:  none;
+        padding: 0px;
+    }
+
+    .detail-box-left {  
+        width: 100%;
+        padding: 5px 0px;
+        border-bottom:  solid 1px #ccc; 
+    } 
+    
+    .detail-box-right { 
+        width: 100%;
+        padding: 5px 0px;
+        border-bottom:  solid 1px #ccc;
+    }
+
+
+}

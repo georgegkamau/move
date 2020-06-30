@@ -1,7 +1,7 @@
 
     <ul class="nav-link">
       <li><%= link_to 'Tenants', apartments_path %> </li>
-      <li><%= link_to 'Landlords', apartments_path %> </li>
+      <li><%= link_to 'Landlords', new_apartment_path %> </li>
       <% if current_user %>
         <li >   
           <%=  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() %> 

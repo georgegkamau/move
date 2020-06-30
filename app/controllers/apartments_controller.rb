@@ -12,6 +12,9 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1
   # GET /apartments/1.json
   def show
+    if @apartment.apartment_detail.pictures.attached?
+    @image = @apartment.apartment_detail.pictures.first
+    end
   end
 
   # GET /apartments/new

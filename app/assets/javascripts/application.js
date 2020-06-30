@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
 
     // SHOW EACH IMAGE PROJECT/SHOW
     $('div.each-project-image-small').on("click", "div.slide", function(){  
-        $(this).parents('div.project-top').find('div.project-image-large').html($(this).context.innerHTML) 
+        $(this).parents('div.apt-show-left').find('div.project-image-large').html($(this).context.innerHTML) 
 
         // var divNum = $(this).context.id 
         // console.log(divNum)

@@ -1,113 +1,121 @@
 <%= form_with(model: apartment_detail, local: true) do |form| %>
-  <div class="row" style="display:block;">
-  <% if apartment_detail.errors.any? %>
-    <div id="error_explanation">  
-      <ul>
-      <% apartment_detail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="row" style="display:block;">
+    <% if apartment_detail.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+            <% apartment_detail.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
     </div>
-  <% end %>
-  </div>
+    <% end %>
+</div>
 
-    <div class="row">
+<div class="row">
     <%= form.label :housing_type %>
-    
-    <%= form.select "housing_type", raw("<option>apartment</option><option>house</option><option>room</option>") %>
-  </div>
 
-    <div class="row">
+    <%= form.select "housing_type", raw("<option>apartment</option><option>house</option><option>room</option>") %>
+</div>
+
+<div class="row">
     <%= form.label :rent %>
     <%= form.number_field :rent %>
-  </div>
+</div>
 
-    <div class="row">
+<div class="row">
     <%= form.label :deposit %>
     <%= form.number_field :deposit %>
-  </div>
+</div>
 
-    <div class="row">
+<div class="row">
     <%= form.label :bedrooms %>
     <%= form.number_field :bedrooms %>
-  </div>
+</div>
 
-    <div class="row">
+<div class="row">
     <%= form.label :bathrooms %>
     <%= form.number_field :bathrooms %>
-  </div>
+</div>
 
-    <div class="row">
+<div class="row" id="details-date" style="">
     <%= form.label :available %>
     <%= form.date_select :available %>
-  </div>
-      <div class="row">
-    <%= form.label :pets %>
-    <%= form.check_box :pets %>
-  </div>
+</div>
 
-  <div class="row">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-
-    <div class="row">
+<div class="row">
     <%= form.label :sq_foot %>
     <%= form.number_field :sq_foot %>
-  </div>
+</div>
+
+<div class="row">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+</div>
 
 
-    <div class="row">
-    <%= form.label :washer_dryer %>
-    <%= form.check_box :washer_dryer %>
-  </div>
+<div class="detail-box">
+    <div class="detail-box-line">
+        <div class="detail-box-left">
+            <%= form.label :pets %>
+            <%= form.check_box :pets %>
+        </div>
+        <div class="detail-box-right">
+            <%= form.label :washer_dryer %>
+            <%= form.check_box :washer_dryer %>
+        </div>
+    </div>
 
-    <div class="row">
-    <%= form.label :laundry %>
-    <%= form.check_box :laundry %>
-  </div>
+    <div class="detail-box-line">
+        <div class="detail-box-left">
+            <%= form.label :laundry %>
+            <%= form.check_box :laundry %>
+        </div>
+        <div class="detail-box-right">
+            <%= form.label :street_parking %>
+            <%= form.check_box :street_parking %>
+        </div>
+    </div>
+
+    <div class="detail-box-line">
+        <div class="detail-box-left">
+            <%= form.label :parking %>
+            <%= form.check_box :parking %>
+        </div>
+        <div class="detail-box-right">
+            <%= form.label :dishwasher %>
+            <%= form.check_box :dishwasher %>
+        </div>
+    </div>
+
+    <div class="detail-box-line">
+        <div class="detail-box-left">
+            <%= form.label :central_air %>
+            <%= form.check_box :central_air %>
+        </div>
+        <div class="detail-box-right">
+            <%= form.label :swimming_pool %>
+            <%= form.check_box :swimming_pool %>
+        </div>
+    </div>
+    <div class="detail-box-line" style="border:none">
+        <div class="detail-box-left">
+            <%= form.label :gym %>
+            <%= form.check_box :gym %>
+        </div>
+        <div class="detail-box-right">
+
+        </div>
+    </div>
+</div>
 
 
-    <div class="row">
-    <%= form.label :street_parking %>
-    <%= form.check_box :street_parking %>
-  </div>
-
-    <div class="row">
-    <%= form.label :parking %>
-    <%= form.check_box :parking %>
-  </div>
-
-    <div class="row">
-    <%= form.label :dishwasher %>
-    <%= form.check_box :dishwasher %>
-  </div>
-
-    <div class="row">
-    <%= form.label :central_air %>
-    <%= form.check_box :central_air %>
-  </div>
-
-    <div class="row">
-    <%= form.label :swimming_pool %>
-    <%= form.check_box :swimming_pool %>
-  </div>
-
-    <div class="row">
-    <%= form.label :gym %>
-    <%= form.check_box :gym %>
-  </div>
-
-    <div class="row">
+<div class="row">
     <%= form.label :pictures %>
     <%= form.file_field :pictures, multiple: true %>
-  </div>
- 
+</div>
 
- <div class="row">
-     <%= form.submit 'submit', id: 'btn' %> 
-  </div>
+
+<div class="row">
+    <%= form.submit 'submit', id: 'btn' %>
+</div>
 <% end %>
-
-

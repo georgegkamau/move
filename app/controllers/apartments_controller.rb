@@ -15,6 +15,18 @@ class ApartmentsController < ApplicationController
     if @apartment.apartment_detail.pictures.attached?
     @image = @apartment.apartment_detail.pictures.first
     end
+    # is this one i posted
+    @my_apartment = false
+    if current_user
+      current_user_id = current_user.id 
+      apartment_user_id = @apartment.user_id
+      if current_user_id == apartment_user_id
+       @my_apartment = true
+      end
+    end
+
+
+    
   end
 
   # GET /apartments/new
@@ -86,3 +98,4 @@ class ApartmentsController < ApplicationController
       params.require(:apartment).permit(:street_address, :apt, :city, :state, :zip_code, :user_id)
     end
 end
+

@@ -1,10 +1,12 @@
 
-
+ 
 .top-nav {
   padding: 5px 0px 0px 0px;
   overflow: hidden;
   background-color: #fff;
-  border-bottom: solid 1px #ddd; 
+  border-bottom: solid 1px #ddd;  
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .top-nav a {
@@ -17,11 +19,14 @@
   overflow: hidden;  
   transition: all .3s ease;
   border: solid 1px #fff; 
+  transition: color 2s;
+  -webkit-transition: background 2s; /* For Safari 3.0 to 6.0 */
+  transition: background 2s;
 }
 
 .top-nav a:hover { 
-  color: #40089a;
-  border: solid 1px #40089a; 
+  color: #fff;
+  background: #40089a; 
 }
 
 .top-nav a.active {
@@ -39,7 +44,7 @@
   display: inline;
 }
 
-
+ 
 .topnav-left {
   float: left;
 }
@@ -77,6 +82,11 @@
 
 .nav-link .logout {
   display: none;
+}
+
+.app-container { 
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 750px) {

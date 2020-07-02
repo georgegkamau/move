@@ -28,7 +28,7 @@
   <body>
 
     <!-- -->  
-    <div class="top-nav">
+    <div class="top-nav" >
       <div class="topnav-left">
         <%= link_to 'moveino', root_path %>
       </div>
@@ -64,13 +64,13 @@
     <% end %>
     
     
-    <!-- --> 
+    <!-- -->
+    <div class="app-container"> 
     <%= yield %>
+    </div>
 
     <!-- -->
     <%= render 'layouts/footer'%>   
-
-    
 
 
   </body>

@@ -1,7 +1,13 @@
 .main-dash  { 
-    background-color: #40089a;
-    text-align: center;
-    min-height: 50px;
+    background-color: #40089a;  
+}
+
+.main-dash-inner {
+  text-align: center;
+  min-height: 50px;
+  border: solid 1px #40089a;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .main-dash li {

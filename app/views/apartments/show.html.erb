@@ -1,17 +1,15 @@
 <div class="header">
     <div class="header-top">
-<span> <%= @apartment.apartment_detail.housing_type %> </span>
+        <span> <%= @apartment.apartment_detail.housing_type %> </span>
     </div>
     <div class="header-middle">
         <div class="header-middle-left">
             <%= @apartment.street_address %> &nbsp <%= @apartment.city %>
         </div>
-        <div class="header-middle-right">
-            <% if current_user %>
+        <div class="header-middle-right"> 
             <% if @my_apartment%> 
-            <%=  link_to raw(' &nbsp &nbsp  edit '+ ' <i class="fa fa-edit"></i> ') , edit_apartment_path(params[:id]) %> 
-            <% end %>
-            <% end %>
+            <%=  link_to raw(' &nbsp &nbsp  edit '+ ' <i class="fa fa-edit"></i> ') , edit_apartment_path(params[:id]) %>
+            <% end %> 
         </div>
         <div class="header-middle-right-right">
             <span> $<%= @apartment.apartment_detail.rent %> </span>
@@ -23,115 +21,192 @@
 <div class="apt-show">
     <div class="apt-show-inner">
         <div class="apt-show-left">
-            <div class="project-top-left">
-                <% if @apartment.apartment_detail.pictures.attached? %>
-                <div class="project-image-large">
-                    <%= image_tag(@image) %>
-                </div>
-                <div class="project-image-small">
-                    <% @apartment.apartment_detail.pictures.each_with_index do |image, index| %>
-                    <div class="each-project-image-small">
-                        <div class="slide" id="<%=index%>">
-                            <%= image_tag(image) %>
+            <div class="apt-show-left-inner">
+                <div class="project-top-left">
+                    <% if @apartment.apartment_detail.pictures.attached? %>
+                    <div class="project-image-large">
+                        <%= image_tag(@image) %>
+                    </div>
+                    <div class="project-image-small">
+                        <% @apartment.apartment_detail.pictures.each_with_index do |image, index| %>
+                        <div class="each-project-image-small">
+                            <div class="slide" id="<%=index%>">
+                                <%= image_tag(image) %>
+                            </div>
                         </div>
+                        <% end %>
                     </div>
                     <% end %>
                 </div>
-                <% end %>
-            </div>
 
+                <!-- -->
+                <div class="apt-show-middle-left">
+                    <div class="apt-show-details-edit">
+                        <ul>
+                            <li>
+                                <span class="apartment-value"> $<%= @apartment.apartment_detail.rent %>/m </span>&nbsp
+                            </li>
+                            </li>
+                            <li>
+                                <%= @apartment.apartment_detail.bedrooms %>.Bed &nbsp
+                            </li>
+                            <li>
+                                <%= @apartment.apartment_detail.bathrooms %>.Bath &nbsp
+                            </li>
+                            <li>
+                                <%= @apartment.apartment_detail.sq_foot %>.sqf &nbsp
+                            </li>
+                            <li>
+                                <span class="apartment-type"><%= @apartment.apartment_detail.housing_type %> </span>
+                            </li>
+                        </ul>
+
+                        <span style="float:right">
+                        </span> 
+                        <% if @my_apartment%>
+
+                        <span style="float:right">
+                            <%=  link_to raw(' &nbsp &nbsp  edit details '+ ' <i class="fa fa-edit"></i> ') , edit_apartment_detail_path(@apartment.apartment_detail.id) %>
+                        </span>
+                        <% end %> 
+                    </div>
+
+                    <div class="apt-show-description">
+                        <span>
+                            <%= word_wrap(@apartment.apartment_detail.description, line_width: 1) %>
+                        </span>
+                    </div>
+
+                    <div class="apt-show-ammenities">
+                        <h3>Amenities</h3>
+                        <ul>
+                            <% if @apartment.apartment_detail.washer_dryer %>
+                            <li> <span> Washer dryer </span> </li>
+                            </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.laundry %>
+                            <li> <span> Laundry </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.street_parking %>
+
+                            <li> <span> Street parking </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.parking %>
+                            <li>
+                            <li> <span> Parking </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.dishwasher %>
+                            <li> <span> Dishwasher </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.central_air %>
+                            <li> <span> Central air </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.swimming_pool %>
+                            <li> <span> Swimming pool </span> </li>
+                            <% end %>
+                            <% if @apartment.apartment_detail.gym %>
+                            <li> <span> Gym </span> </li>
+                            <% end %>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
         </div>
 
         <div class="apt-show-right">
             <div class="apt-show-right-inner">
-                <div class="apt-show-right-top">
-                    <div class="apt-show-right-top-left">
+                 <div class="apt-show-right-middle">
+                    <div class="apt-show-right-middle-left">
                         <span class="apt-show-title "> Available </span>
-                        ll
+                        <span class="apt-show-date"> <%= @apartment.apartment_detail.available%> </span>
                     </div>
-                    <div class="apt-show-right-top-right"> rr </div>
+                    <div class="apt-show-right-middle-right">
+                    <% if @my_apartment%>
+                    <span class="applied-count"> Applies </span>
+                    <span class="applied-count"> <%= @apartment.applies.count%> </span>
+                    <% else %>
+                    <% if @applied %>
+                    <%= link_to apply_path(@applied_id) do %>
+                    <div class="apt-show-applied"> 
+                        Applied
+                    </div>
+                    <% end %>
+                    <% end %>
+                    <% end %>
+                    </div>
                 </div>
                 <div class="apt-show-right-middle">
                     <div class="apt-show-right-middle-left">
-                        <span class="apt-show-title "> Apartment </span>
+                        <span class="apt-show-title"> Bedrooms </span>
+                        <span class="apt-show-date"><%= @apartment.apartment_detail.bedrooms %> </span>
+                    </div>
+                    <div class="apt-show-right-middle-right">
+                        <span class="apt-show-title "> Bathrooms </span>
+                        <span class="apt-show-date"><%= @apartment.apartment_detail.bathrooms %> </span>
+                    </div>
+                </div>
+                <div class="apt-show-right-middle">
+                    <div class="apt-show-right-middle-left">
+                        <span class="apt-show-title"> Size </span>
+                        <span class="apt-show-date">
+                            <%if @apartment.apartment_detail.sq_foot %>
+                            <%= @apartment.apartment_detail.sq_foot %>
+                            <% else%>
+                            Ukwn
+                            <% end %>
+                        </span>
                     </div>
                     <div class="apt-show-right-middle-right">
                         <span class="apt-show-title "> Apartment </span>
+                        <span class="apt-show-date"><%= @apartment.apartment_detail.housing_type %> </span>
                     </div>
                 </div>
                 <div class="apt-show-right-bottom">
+                    <span class="apt-show-date"> Interested?</span>
+                    <div class="apply-form">
+                        <%= form_with(model: @apply, local: true) do |form| %>
+                        <div class="row" style="display:block;">
+                            <% if @apply.errors.any? %>
+                            <div id="error_explanation">
+                                <ul>
+                                    <% apartment.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                            <% end %>
+                        </div> 
+                    <div class="row">
+                        <label for="apply_message" class="apply-label">Contact /Inquire </label>
+                        <%= form.text_area :message %>
+                        <%= form.hidden_field :apartment_id, :value => @apartment.id %> 
+                    </div>
+                    <% unless @my_apartment%>
+                    <div class="row">
+                        <%= form.submit 'submit', id: 'btn' %>
+                    </div>
+                    <% end %> 
+                    <% end %>
 
                 </div>
-
             </div>
+
         </div>
     </div>
 
     <!-- -->
     <div class="apt-show-middle">
         <div class="apt-show-middle-inner">
-            <div class="apt-show-middle-left">
-            <div class="apt-show-details-edit">
-            <span style="float:right">
-                    <% if current_user %>
-            <% if @my_apartment%> 
-            <%=  link_to raw(' &nbsp &nbsp  edit details '+ ' <i class="fa fa-edit"></i> ') , edit_apartment_path(params[:id]) %> 
-            <% end %>
-            <% end %>
-            </span>
-            </div>
 
-            <div class="apt-show-description">
-                <span>
-                    <%= @apartment.apartment_detail.description %>
-                </span>
-</div>
-                <div class="apt-show-ammenities">
-                <h3>Amenities</h3>
-                    <ul> 
-                        <% if @apartment.apartment_detail.washer_dryer %>
-                        <li> <span> Washer dryer %>
-  </li> 
-<% end %>
-<% if @apartment.apartment_detail.laundry %>
-<li>  <span> Laundry </span> </li> 
-<% end %>
-<% if @apartment.apartment_detail.street_parking %>
 
-<li> <span> Street parking </span> </li> 
-<% end %>
-<% if @apartment.apartment_detail.parking %>
-<li> <li>  <span> Parking  </span> </li> 
-<% end %>
-<% if @apartment.apartment_detail.dishwasher %>
-<li> <span> Dishwasher </span> </li> 
-<% end %>
-<% if @apartment.apartment_detail.central_air %>
-<li>  <span> Central air </span> </li> 
-<% end %>
-<% if @apartment.apartment_detail.swimming_pool %>
-<li>  <span> Swimming pool  </span> </li>  
-<% end %>
-<% if @apartment.apartment_detail.gym %>
-<li>  <span> Gym  </span> </li>  
-<% end %>  
-                         
-                    </ul> 
-                </div>
-            </div>
-
-            <!-- -->
-            <div class="apt-show-middle-right">
-                <div class="apt-show-middle-right-inner">
-                      
-                </div>
-            </div>
         </div>
-
     </div>
+
 </div>
 
-
-
-
+<!-- -->
 </div>

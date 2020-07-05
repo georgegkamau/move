@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :email, :presence => {message: " cannot be blank."}
 
   has_many :apartments, :dependent => :destroy
+  has_many :applies, :dependent => :destroy
   
 
 end

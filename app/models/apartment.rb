@@ -7,6 +7,7 @@ class Apartment < ApplicationRecord
 
   belongs_to :user
   has_one :apartment_detail, :dependent => :destroy
+  has_many :applies, :dependent => :destroy
   
 
   

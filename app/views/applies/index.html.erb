@@ -1,0 +1,63 @@
+ <div class="header">
+     <div class="header-top">
+         <span> <%= current_user.applies.count %> </span>
+     </div>
+     <div class="header-middle">
+         <div class="header-middle-left">
+             Applications
+         </div>
+         <div class="header-middle-right">
+             <% if current_user %>
+             <% if current_user.apartments.count > 0 %>
+             <%  link_to raw('New '+ ' <i class="fa fa-plus-square"></i> ') , new_apartment_path() %>
+             <% end %>
+             <% end %>
+         </div>
+     </div>
+ </div>
+
+ <div class="applies-index">
+     <div class="applies-index-inner">
+         <div class="applies-index-left">
+             <div class="applies-index-left-inner">
+                 <% @applies.each do |apply| %>
+                 <% @this_apartment = Apartment.find(apply.apartment_id) %>
+                 <div class="applies-index-each">
+                    <%= link_to apply_path(apply.id) do %>
+                     <div class="applies-index-each-inner">
+                         <div class="applies-index-each-left">
+                             <% if @this_apartment.apartment_detail.pictures.attached? %>
+                             <%= image_tag(@this_apartment.apartment_detail.pictures.first) %>
+                             <% end %>
+                         </div>
+                         <div class="applies-index-each-right">
+                             <div class="applies-index-each-right-top">
+                                 <ul>
+                                     <li style="float:left" class="street" id='street-small'> <%= @this_apartment.street_address %> </li>
+                                     <li style="float:left" class="street" id='street-large'> <%= @this_apartment.street_address %> </li>
+                                     <li style="float:right" class="cost" > $<%= @this_apartment.apartment_detail.rent %> </li>
+                                 </ul>
+                             </div>
+                             <div class="applies-index-each-right-bottom">
+                                 <ul>
+                                     <li style="float:left" id='message-small'> <%= apply.message.truncate_words(3) %> </li>
+                                     <li style="float:left" id='message-large'> <%= apply.message.truncate_words(30) %> </li>
+                                     <li style="float:right;text-align:right"> <%= time_tag(apply.created_at)  %> </li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <% end %>
+                      
+                 </div>
+                 <% end %>
+             </div>
+         </div>
+
+         <div class="applies-index-right">
+             rr
+         </div>
+
+         <!-- -->
+     </div>
+ </div>

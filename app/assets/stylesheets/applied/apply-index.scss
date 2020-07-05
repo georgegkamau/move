@@ -1,0 +1,164 @@
+// Place all the styles related to the applies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+
+
+
+.applies-index { 
+    padding: 0 30px;   
+    width: 100%; 
+    background-color: #fff;
+}
+
+.applies-index-inner {
+    display: flex;  
+}
+
+.applies-index-left  {  
+    min-width: 300px;
+    max-width: 750px;
+    vertical-align: top;
+    margin: 0 2%;  
+    flex-grow: 1;  
+}
+
+.applies-index-right  {  
+    min-width: 300px;
+    max-width: 750px;
+    vertical-align: top;
+    margin: 0 2%;  
+    flex-grow: 3;  
+}
+
+.applies-index-each { 
+}
+
+.applies-index-each-inner {
+    border-bottom: solid 1px #ddd;
+    display: flex; 
+    padding: 10px 0; 
+    color: rgba(3, 19, 39, 0.87); 
+} 
+
+
+.applies-index-each-right-top .street {
+    color: rgba(3, 19, 39, 0.87); 
+    font-size: 17px; 
+}
+
+.applies-index-each-right-top .cost {
+    color: rgba(3, 19, 39, 0.87); 
+    font-size: 17px;
+    font-weight: 700;
+    text-align: right;
+}
+
+#street-small {
+    display: none;
+}
+
+
+#message-small {
+    display: none;
+}
+
+
+.applies-index-each-left { 
+    width: 30%;
+    min-width: 50px;
+    height: 70px;
+    overflow: hidden;
+} 
+
+.applies-index-each-left img { 
+    width: 100%;
+} 
+
+
+.applies-index-each-right {
+    margin-left: 1%; 
+    width: 68%;
+    overflow: hidden;
+} 
+
+.applies-index-each-right-top {
+    display: block; 
+} 
+
+.applies-index-each-right-bottom {
+    display: block; 
+}
+
+.applies-index-each-right ul {
+    list-style-type: none;  
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+}
+
+.applies-index-each-right li {  
+    float: left;
+    text-align: left; 
+    max-height: 24px;
+    overflow: hidden;
+    width: 104px;
+}
+
+
+
+
+.applies-index-inner-top {
+    border: solid 1px black;
+}
+
+
+.applies-index-top-left {
+    border: solid 1px black;
+}
+
+
+.applies-index-top-middle {
+    border: solid 1px black;
+}
+             
+.applies-index-top-right {
+    border: solid 1px black;
+}
+
+
+
+@media only screen and (max-width: 768px) { 
+  
+      
+   
+ 
+}
+
+
+@media only screen and (max-width: 450px) {
+    .applies-index {
+        padding: 0 0px; 
+    }
+
+    .applies-index-inner { 
+        display: block;
+    }
+
+    #street-small {
+        display: block;
+    }
+    
+    #street-large {
+        display: none;
+    }
+    
+    #message-large {
+        display: none;
+    }
+    
+    #message-small {
+        display: block;
+    }
+}

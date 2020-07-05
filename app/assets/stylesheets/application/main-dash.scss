@@ -81,7 +81,7 @@
  
 }
  
-  @media only screen and (max-width: 750px) {
+@media only screen and (max-width: 450px) {
     .main-dash li {
       float: right;
       padding-right: 3px;
@@ -96,8 +96,8 @@
     }
 
     .main-dash li {
-      font-size: 13px;
-      width: 40px;
+      font-size: 12px;
+      width: 50px;
       overflow-x: scroll;
       margin-left: 5px;
   //     border: solid 2px red;

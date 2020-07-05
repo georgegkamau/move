@@ -36,12 +36,16 @@
       <%= render 'layouts/nav'%> 
       </div>
       <div class="topnav-right">
+      <div class="topnav-right-left">
         <% if current_user %>
             <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>  
         <% else %> 
             <%=  link_to raw('<i class="fa fa-sign-in"></i> ')  + "     Sign in", new_user_session_path %> 
         <% end %> 
-        <span> <i class="fa fa-bars"></i> </span>
+        </div>
+        <div class="topnav-right-right">
+         <i class="fa fa-bars"></i> 
+         </div>
       </div>  
     </div> 
   

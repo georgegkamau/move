@@ -12,18 +12,36 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1
   # GET /apartments/1.json
   def show
+    # VAR
+    if current_user
+    current_user_id = current_user.id 
+    end
+    apartment_user_id = @apartment.user_id
+
+    # Pix
     if @apartment.apartment_detail.pictures.attached?
     @image = @apartment.apartment_detail.pictures.first
     end
+
     # is this one i posted
     @my_apartment = false
+    @applied = false
     if current_user
-      current_user_id = current_user.id 
-      apartment_user_id = @apartment.user_id
       if current_user_id == apartment_user_id
        @my_apartment = true
       end
+
+    if Apply.find_by(user_id: current_user_id, apartment_id: @apartment.id)
+      @applied = true 
+      app = Apply.find_by(user_id: current_user_id, apartment_id: @apartment.id)
+      @applied_id = app.id
     end
+
+
+    end
+
+    # apply
+    @apply = Apply.new
 
 
     

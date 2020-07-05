@@ -42,17 +42,17 @@
         <div class="each-apartment-body">
             <div class="apartment-type-cost">
                 <ul>
-                    <li style="">
-                        <span class="apartment-amount-title"> Property</span>
-                        <span class="apartment-value"> <%= apartment.id %></span>
+                    <li>
+                        <span class="apartment-value"> $<%= apartment.apartment_detail.rent %>/m</span>&nbsp 
                     </li>
-                    <li style="">
-                        <span class="apartment-amount-title"> Rent/month </span>
-                        <span class="apartment-value"> $ <%= apartment.id %></span>
+                    <li>
+                    <%= apartment.apartment_detail.bedrooms %>.BR &nbsp 
+                    </li> 
+                               <li>
+                    <%= apartment.apartment_detail.bathrooms %>.BA &nbsp 
                     </li>
-                    <li style="">
-                        <span class="apartment-amount-title"> available</span>
-                        <span class="apartment-value"> <%= apartment.id %></span>
+                               <li>
+                    <%= truncate(apartment.apartment_detail.housing_type , length: 8) %> 
                     </li>
                 </ul>
             </div>

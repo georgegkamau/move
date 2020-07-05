@@ -13,7 +13,7 @@ div {
 }
 
 
-.apt-show-left, .apt-show-middle-left {  
+.apt-show-left  {  
     min-width: 300px;
     max-width: 750px;
     vertical-align: top;
@@ -21,16 +21,14 @@ div {
     flex-grow: 3; 
 }
 
-
-
-.apt-show-right, .apt-show-middle-right {
-    vertical-align: top;
-    min-width: 250px; 
-    min-height: 300px;
-    vertical-align: top;
-    margin: 0 2%; 
-    flex-grow: 1;  
+.apt-show-left-inner {  
+    width: 100%; 
+    vertical-align: top;  
 }
+
+
+// border: solid 2px blue;
+ 
 
 .apt-header {
     padding: 10px 20px; 
@@ -73,64 +71,10 @@ div {
     color: grey; 
 }
 
-// RIGHTSIDE
-.apt-show-right {
-    position: relative;
-    border: solid red 1px;
-}
-
-.apt-show-right-inner {
-    display: block;
-    border: solid red 1px;
-    width: 100%;
-    // position: fixed;
-    position: sticky !important;
-    top: 80px !important;
-    z-index: 1 !important;
-    z-index: 1;
-    top: 100px;
-    right: 10px;
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px 0;
-}
-
-.apt-show-right-top {
+.apt-show-date {
+    font-size: 20px; 
     display: block;
 }
-.apt-show-right-top-left {
-    display: inline-block;
-    width: 67%;
-}
-.apt-show-right-top-right {
-    display: inline-block;
-    width: 30%;
-}
-
-
-.apt-show-right-middle {
-    display: block;
-}
-
-
-.apt-show-right-bottom {
-    display: block;
-}
-
-.apt-show-right-middle-left {
-    display: inline-block;
-    width: 49%;
-
-}
-
-.apt-show-right-middle-right {
-    display: inline-block;
-    width: 49%;
-
-}
-
- 
-
 
 ///////
  
@@ -158,6 +102,7 @@ div {
   margin: 5px;
   border-radius: 6px; 
   overflow: hidden; 
+  vertical-align: top;
 }
 
 .each-project-image-small img {
@@ -169,29 +114,54 @@ div {
  
 
 // DESCRIPTIONS
-.apt-show-middle {
-    margin: 50px 0;
-}
-
-.apt-show-middle-inner {
-    display: flex;  
-}
-
-.apt-show-middle-left, .apt-show-middle-right { 
+.apt-show-middle-left { 
     color: rgb(34, 34, 34) !important;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px ;
+    margin-top: 40px; 
+}
+
+
+.apt-show-details-edit { 
+    height: 35px;
+    border-bottom: solid 1px #ddd;
+}
+
+.apt-show-details-edit ul {
+    list-style-type: none;  
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+}
+
+.apt-show-details-edit li {  
+    float: left;
+    text-align: left; 
+    max-height: 24px;
+}
+
+.apt-show-details-edit a { 
+    color: #40089a;
+    font-weight: 700;
+    text-decoration: none; 
+}
+
+.apt-show-details-edit a:hover { 
+    color: #00b9ff;
+    font-weight: 700;
+    text-decoration: none; 
 }
 
 .apt-show-ammenities, .apt-show-description {
-    width: 100%;
-    margin: 20px;
-    padding-bottom: 30px; 
+    width: 100%;   
+    padding: 10px;
+    padding-bottom: 40px;
 }
 
 .apt-show-description {
+    padding-top: 20px;
     border-bottom:  solid 1px #ddd;
 }
 
@@ -216,31 +186,146 @@ div {
 }
 
 
-.apt-show-details-edit { 
-    height: 30px;
+// RIGHTSIDE
+.apt-show-right {
+    position: relative; 
+    min-width: 300px; 
+    vertical-align: top;
+    margin: 0 2%;  
+    flex-grow: 1; 
 }
 
-.apt-show-details-edit a { 
-    color: #40089a;
-    font-weight: 700;
-    text-decoration: none; 
+.apt-show-right-inner {
+    display: block; 
+    width: 100%; 
+    position: sticky; 
+    padding: 10px 20px;    
+    top: 80px; 
+    border: solid 1px #ddd;
 }
 
-.apt-show-details-edit a:hover { 
+.apt-show-right-top {
+    display: block;
+    border-bottom: solid 1px #ddd;
+}
+.apt-show-right-top-left {
+    display: inline-block;
+    width: 67%; 
+}
+
+.apt-show-right-top-right {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top; 
+}
+
+.applied-count {
+    display: block; 
+}
+
+.apt-show-applied { 
+    text-align: center;
     color: #00b9ff;
-    font-weight: 700;
+    font-weight: 600;
+    padding: 6px; 
+    border: solid 1px #00b9ff;
+    border-radius: 25px;
+
+}
+
+.apt-show-right-top-right a {
     text-decoration: none; 
 }
+ 
+
+.apt-show-applied:hover {  
+    background-color: #00b9ff;
+    color: #fff;  
+}
 
 
-.apt-show-middle-right {
+.apt-show-right-middle {
+    display: block;
+    border-bottom: solid 1px #ddd;
+}
 
 
+.apt-show-right-bottom {
+    display: block;
+    padding: 20px 0;
+}
+
+.apt-show-right-bottom .apt-show-date {
+    text-align: center;
 }
 
 
 
-@media only screen and (max-width: 750px) {
+.apt-show-right-middle-left {
+    display: inline-block;
+    width: 49%;
+
+}
+
+.apply-form {
+   width: 100;
+   padding: 10px;       
+}
+
+// FORM
+.apply-label {
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center; 
+    width: 100%; 
+}
+  
+ 
+.apply-form #btn {
+    background-color: #40089a;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .apply-form #btn:hover {
+    background-color: #fff;
+    padding: 11px;
+    color: #40089a;
+    border: solid 1px #40089a;
+  }
+  
+  .apply-form a {
+    color: #2196F3; 
+  }
+
+  .apply-form #apply_message {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+.apt-show-right-middle-right {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+
+.apt-show-right-middle-right a {   
+    text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
     .project-top-left {
         display: block;
         width: 90%;
@@ -248,26 +333,6 @@ div {
 
     }
 
- 
-
- 
- 
-}
-
-
-@media only screen and (max-width: 450px) {
-  
-
-    .project-top-left { 
-        width: 100%; 
-    } 
-
-   
-  
-}
-
-
-@media only screen and (max-width: 750px) {
     .apt-show-left { 
    display: block;   
    min-width: 260px;
@@ -280,14 +345,34 @@ display: block;
   display: block;   
 }
  
+.apt-show-details-edit .apartment-value, .apartment-type {
+    display: none;
+}
+ 
+.apt-show-details-edit {
+    height: 65px; 
+}
+
 
 }
 
 
 @media only screen and (max-width: 450px) {
+
+
   .apt-show {
-   padding: 5px; 
+   padding: 0; 
  } 
+
+.apt-show-left { 
+    margin: 2px; 
+}
+
+.each-project-image-small {  
+    width: 32%;
+    max-height: 75px;
+    margin: 5px 2px;
+}
 
  .apt-header-line  {
     display: block;
@@ -302,5 +387,22 @@ display: block;
 .apt-header-right {
     display: block;
 }
- 
+
+.project-image-large { 
+    max-height: 350px; 
 }
+
+
+.apt-show-details-edit {
+    height: 35px; 
+}
+
+
+    .project-top-left { 
+        width: 100%; 
+    } 
+
+   
+  
+}
+

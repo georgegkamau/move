@@ -4,23 +4,26 @@
       <li><%= link_to 'Landlords', new_apartment_path %> </li>
       <% if current_user %>
         <li >   
-          <%=  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() %> 
+          <!--  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() --> 
         </li>
         
         <% if current_user %>
           <li >  
-            <%= link_to 'Account', root_path %> 
+            <%= link_to 'Applied', applies_path %> 
           </li> 
           <li > 
-            <%= link_to 'Add money', root_path %>
+            <%= link_to 'myApartments', apartments_path %>
           </li>  
         <% end %>
       <% end %>
       <li >  <a href="#news">News</a></li>
       <li> <a href="#contact">Contact</a></li> 
       <li class="logout">
-          <% if current_user %>
+          <% if current_user %> 
             <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>  
-        <% end %> 
+        <% else %> 
+            <%=  link_to raw('<i class="fa fa-sign-in"></i> ')  + "     Sign in", new_user_session_path %> 
+        <% end %>  
+
       </li>
     </ul>

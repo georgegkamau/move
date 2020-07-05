@@ -1,7 +1,7 @@
 
  
 .top-nav {
-  padding: 5px 0px 0px 0px;
+  padding: 0px;
   overflow: hidden;
   background-color: #fff;
   border-bottom: solid 1px #ddd;  
@@ -58,7 +58,17 @@
 }
 
 .topnav-right {
-  float: right;
+  float: right; 
+}
+
+.topnav-right-left {
+  display: inline-block; 
+}
+
+.topnav-right-right {
+  display: inline-block; 
+  vertical-align: top;
+  padding-top: 10px;
 }
 
 .topnav-right span {
@@ -75,7 +85,7 @@
 
 .fa-bars {
   color: #40089a; 
-  padding: 6px 20px 0 0;
+  padding: 16px 20px 0 0;
   font-size: 40px;
   display: none;
 }
@@ -126,6 +136,10 @@
   }
 
   .fa-sign-out {
+    display: none;
+  }
+
+  .fa-sign-in {
     display: none;
   }
 

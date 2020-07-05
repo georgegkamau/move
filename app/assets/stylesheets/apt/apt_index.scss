@@ -12,7 +12,7 @@
     margin: 8px; 
     vertical-align: top; 
     width: 250px;
-    height: 380px;  
+    max-height: 380px;  
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     line-height: 1.43;
     color: #484848; 
@@ -25,9 +25,9 @@
 .each-apartment-header { 
     display: flex;
 }
-
+ 
 .each-apartment-header-left { 
-    padding: 10px 0 0 20px; 
+    padding: 10px 0 10px 10px; 
     text-align: left; 
     font-size: large;
     font-weight: 600;
@@ -36,7 +36,7 @@
 }
 
 .each-apartment-header-right { 
-    padding: 13px 15px 0 0;  
+    padding: 7px 15px 0 0;  
     text-align: right;
     float: right;
     flex-grow: 1;
@@ -66,23 +66,27 @@
 
 
 .apartment-type-cost {
-    border: solid #fff 3px;
-    margin: 10px 0 0 5px; 
-    min-height: 32px;   
+    margin-top: 5px; 
+    min-height: 24px; 
+    display: table;
+    width: 100%;
+    padding-left: 1%;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #ddd; 
 }
 .apartment-type-cost ul {
-    list-style-type: none; 
-    float: left;
+    list-style-type: none;  
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0; 
+    overflow: hidden;
 }
 
 .apartment-type-cost li {  
     float: left;
-    text-align: left;
-    width: 32%;
-    padding-left: 1%;
+    text-align: left; 
+    max-height: 24px;
+    overflow: hidden;
 }
 
 .apartment-amount-title {
@@ -94,22 +98,24 @@
 }
  
 
-.apartment-value {
-    padding-top: 3px;
+.apartment-value {    
+    padding-right: 9px;
     display: block;
-    color: rgba(3, 19, 39, 0.87); 
+    color: rgba(3, 19, 39, 0.87);
     margin: 0;
     font-size: 17px;
+    font-weight: 700;
 
 }
 
 .apartment-description { 
     width: 100%;
     padding-left: 5px;
-    height: 51px; 
+    height: 61px; 
     font-size: 17px;
     line-height: 1.43; 
     overflow: hidden;
+    padding-top: 10px;
   }
 
 
@@ -134,7 +140,7 @@
     margin: 10px auto;
     border-radius: 25px;
     font-weight: 600;
-}
+} 
 
 .apartment-details:hover { 
     border: solid 1px #40089a;
@@ -142,36 +148,6 @@
     color: #fff; 
 }
 
- 
-.header-middle-right {
-    padding-left: 5px;
-    padding-top: 4px; 
-}
-
-.header-middle-right a {
-    color: #40089a;
-    font-weight: 700;
-    text-decoration: none;
-    padding-top: 10px;
-}
-
-.header-middle-right .fa-plus-square {
-    color: #40089a; 
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.header-middle-right a:hover {
-    color: #00b9ff;
-}
-
-.header-middle-right:hover .fa-plus-square {
-    color: #00b9ff;
-}
-
-.header-middle-right .account {
-    display: none;
-}
 
 .header-middle-right-right { 
     font-size: 2em;
@@ -215,9 +191,9 @@
 @media only screen and (max-width: 450px) {
 
     .apartment-container > .each-apartment { 
-        width: 98%;
-        height: 560px;
+        width: 98%; 
         margin: 5px auto;
+        border-top: solid 1px #ddd;
     }
-  
+
 }

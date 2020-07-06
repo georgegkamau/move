@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
   #
   resources :apartment_details
-  resources :apartments
-   
   
+  resources :apartments  
+  # get 'myapartments', action: :myapartments, controller: 'apartments'
+  get 'myapartments', to: 'apartments#myapartments' 
+  get 'applications', to: 'applies#applications' 
+  
+
+
   # DEVISE
   devise_for :users
   

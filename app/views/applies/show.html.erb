@@ -1,19 +1,96 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Message:</strong>
-  <%= @apply.message %>
+    <strong>Message:</strong>
+    <%= @apply.message %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @apply.user %>
+    <strong>User:</strong>
+    <%= @apply.user %>
 </p>
 
 <p>
-  <strong>Apartment:</strong>
-  <%= @apply.apartment %>
+    <strong>Apartment:</strong>
+    <%= @apply.apartment %>
 </p>
 
 <%= link_to 'Edit', edit_apply_path(@apply) %> |
 <%= link_to 'Back', applies_path %>
+
+
+<div class="header">
+    <div class="header-top">
+        <span> <%= @apply.apartment.street_address %> </span>
+    </div>
+    <div class="header-middle">
+        <div class="header-middle-left">
+            Application
+        </div>
+        <div class="header-middle-right">
+            <% if current_user %>
+            <% if current_user.apartments.count > 0 %>
+            <%  link_to raw('New '+ ' <i class="fa fa-plus-square"></i> ') , new_apartment_path() %>
+            <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="applies-show">
+    <div class="applies-show-inner">
+        <div class="applies-show-left">
+            <div class="applies-show-left-inner">
+                <div class="applies-show-left-top">
+                    <div class="applies-show-left-left">
+                    <% @this_apartment = Apartment.find(@apply.apartment.id) %>
+       <% if @this_apartment.apartment_detail.pictures.attached? %>
+                             <%= image_tag(@this_apartment.apartment_detail.pictures.first) %>
+                             <% end %>
+                    </div>
+                    <div class="applies-show-left-right">
+                      <ul>
+                         <li class="apply-show-ttle"> 
+                         <span class="apply-show-zip">
+                         <%= @apply.apartment.street_address %> <%= @apply.apartment.city %> 
+                        
+                        <%= @apply.apartment.zip_code %> 
+                        </span>
+                     
+                      </li>
+                      <li class="apply-show-ttle"> 
+                      
+                      Available <%= time_tag(@this_apartment.apartment_detail.available)  %> 
+                     
+                     
+                      </li>  
+                        <li> 
+                        <%= @this_apartment.apartment_detail.bathrooms %> .BA
+                      </li>
+                            <li> 
+                        <%= @this_apartment.apartment_detail.bedrooms %> .BR
+                      </li>
+                            <li> 
+                         <span class="apply-show-zip"> <%= @this_apartment.apartment_detail.housing_type %> </span>
+                      </li>
+                       <li> 
+                      <span style="font-weight:700" >$<%= @this_apartment.apartment_detail.rent %>/m </span>
+                      </li>
+                          <li> 
+                          <span class="apply-show-zip">$<%= @this_apartment.apartment_detail.deposit %> .DP </span>
+                      </li>
+                      </ul>
+
+                    </div>
+                </div>
+
+           
+            </div>
+        </div>
+        <div class="applies-show-right">
+            <div class="applies-show-right-inner">
+                rrr
+            </div>
+        </div>
+    </div>
+</div>

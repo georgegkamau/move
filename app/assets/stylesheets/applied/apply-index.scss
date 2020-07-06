@@ -20,7 +20,7 @@
     max-width: 750px;
     vertical-align: top;
     margin: 0 2%;  
-    flex-grow: 1;  
+    flex-grow: 3;  
 }
 
 .applies-index-right  {  
@@ -28,58 +28,53 @@
     max-width: 750px;
     vertical-align: top;
     margin: 0 2%;  
-    flex-grow: 3;  
+    flex-grow: 1;  
 }
 
 .applies-index-each { 
 }
 
 .applies-index-each-inner {
-    border-bottom: solid 1px #ddd;
-    display: flex; 
-    padding: 10px 0; 
-    color: rgba(3, 19, 39, 0.87); 
+    border-bottom: solid 1px #ddd; 
+    margin: 10px 0; 
+    color: rgba(3, 19, 39, 0.87);  
 } 
-
-
-.applies-index-each-right-top .street {
-    color: rgba(3, 19, 39, 0.87); 
-    font-size: 17px; 
-}
-
-.applies-index-each-right-top .cost {
-    color: rgba(3, 19, 39, 0.87); 
-    font-size: 17px;
-    font-weight: 700;
-    text-align: right;
-}
-
-#street-small {
-    display: none;
-}
-
-
-#message-small {
-    display: none;
-}
-
 
 .applies-index-each-left { 
-    width: 30%;
-    min-width: 50px;
+    display: inline-block; 
+    width: 28%;
+    min-width: 150px;
     height: 70px;
     overflow: hidden;
+    vertical-align: top; 
 } 
+
 
 .applies-index-each-left img { 
     width: 100%;
 } 
 
 
+.applies-index-each-inner:hover {
+    background-color: #40089a; 
+    color: #fff
+}
+ 
+
+.applies-index-each-inner:hover  .applies-index-each-right li {
+    background-color: #40089a; 
+    color: #fff
+}
+
+ 
+
 .applies-index-each-right {
-    margin-left: 1%; 
-    width: 68%;
+    margin-left: 1%;  
     overflow: hidden;
+    display: inline-block;
+    width: 67%;
+    // min-width: 150px; 
+    vertical-align: top;
 } 
 
 .applies-index-each-right-top {
@@ -103,7 +98,30 @@
     text-align: left; 
     max-height: 24px;
     overflow: hidden;
-    width: 104px;
+    width: 100px;
+    color:  #000;
+}
+  
+
+.applies-index-each-right-top .street {
+    color: rgba(3, 19, 39, 0.87); 
+    font-size: 17px; 
+}
+
+.applies-index-each-right-top .cost {
+    color: rgba(3, 19, 39, 0.87); 
+    font-size: 17px;
+    font-weight: 700;
+    text-align: right;
+}
+
+#street-small {
+    display: none;
+}
+
+
+#message-small {
+    display: none;
 }
 
 
@@ -144,6 +162,15 @@
 
     .applies-index-inner { 
         display: block;
+    }
+
+    .applies-index-each-left { 
+        min-width: 30px;
+        height: 70px; 
+    }
+
+    .applies-index-each-right { 
+        width: 68%;
     }
 
     #street-small {

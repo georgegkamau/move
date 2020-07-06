@@ -1,0 +1,130 @@
+.applies-show { 
+    padding: 0 30px;   
+    width: 100%; 
+    background-color: #fff;
+}
+
+.applies-show-inner {
+    display: flex;   
+}
+
+.applies-show-left  {  
+    min-width: 300px;
+    max-width: 750px;
+    vertical-align: top;
+    margin: 0 2%;  
+    flex-grow: 3;   
+}
+
+.applies-show-right  {  
+    min-width: 300px;
+    max-width: 750px;
+    vertical-align: top;
+    margin: 0 2%;  
+    flex-grow: 1;   
+}
+ 
+.applies-show-each-inner {
+    border-bottom: solid 1px #ddd; 
+    margin: 10px 0; 
+    color: rgba(3, 19, 39, 0.87);  
+} 
+
+.applies-show-left-top { 
+    width: 100%;
+} 
+
+.applies-show-left-left { 
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    max-height: 90px;
+    overflow: hidden;
+}
+
+.applies-show-left-left img { 
+    width: 100%; 
+    
+}
+
+.applies-show-left-right { 
+    display: inline-block;
+    width: 68%;
+    vertical-align: top;
+}
+
+.applies-show-left-right ul {
+    list-style-type: none;  
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+}
+
+.applies-show-left-right li {  
+    float: left;
+    text-align: left; 
+    overflow: hidden;  
+    padding: 0 6px;
+}
+
+.apply-show-ttle {
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    float: none; 
+}
+
+
+@media only screen and (max-width: 768px) { 
+  
+    .applies-show-inner {
+        display: block;
+    }
+    
+    .applies-show-left  {  
+        display: block;
+        margin: 0;
+    }
+    
+    .applies-show-right  {  
+        display: block; 
+        margin: 0;
+    }
+   
+ 
+}
+
+
+@media only screen and (max-width: 450px) {
+    .applies-show { 
+        padding: 3px;  
+    }
+  
+
+    .applies-show-left-left {  
+       max-width: 60px; 
+    }
+
+    .applies-show-left-right {  
+        min-width: 230px; 
+    }
+
+    .apply-show-ttle {
+        font-size: inherit; 
+    }
+
+    .apply-show-zip {
+        display: none;
+    }
+
+    .applies-show-left-right ul {
+        line-height: 1.2;
+    }
+
+    .applies-show-left-right li {   
+        padding-left: 3px; 
+    }
+
+
+}

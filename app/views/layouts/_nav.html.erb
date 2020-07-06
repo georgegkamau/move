@@ -1,29 +1,46 @@
+<ul class="nav-link">
+    <% unless current_user %>
+    <li>
+        <%= link_to 'Tenants', apartments_path %>
+    </li>
+    <li>
+      <%= link_to 'Landlords', new_apartment_path %>
+    </li>
+    <% end %>
 
-    <ul class="nav-link">
-      <li><%= link_to 'Tenants', apartments_path %> </li>
-      <li><%= link_to 'Landlords', new_apartment_path %> </li>
+    <% if current_user %>
+    <li>
+        <!--  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() -->
+    </li>
+
       <% if current_user %>
-        <li >   
-          <!--  link_to raw('<i class="fa fa-plus-circle"></i> ')  + "new", root_path() --> 
-        </li>
-        
-        <% if current_user %>
-          <li >  
-            <%= link_to 'Applied', applies_path %> 
-          </li> 
-          <li > 
-            <%= link_to 'myApartments', apartments_path %>
-          </li>  
-        <% end %>
-      <% end %>
-      <li >  <a href="#news">News</a></li>
-      <li> <a href="#contact">Contact</a></li> 
-      <li class="logout">
-          <% if current_user %> 
-            <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>  
-        <% else %> 
-            <%=  link_to raw('<i class="fa fa-sign-in"></i> ')  + "     Sign in", new_user_session_path %> 
-        <% end %>  
-
+      <li>
+          <% if current_user.applies.count > 0  %>
+          <%= link_to 'Applied', applies_path %>
+          <% end %>
       </li>
-    </ul>
+        <% if current_user.apartments.count > 0 %>
+        <li>
+            <%= link_to 'Myapartments', myapartments_path %>
+        </li>
+        <li>
+            <%= link_to 'Applications', applications_path %>
+        </li>
+        <% else%>
+        <li>
+            <%= link_to 'Landlords', new_apartment_path %>
+        </li>
+        <% end %>
+        <li>
+      <% end %>
+    <% end %>
+    <li> <a href="#news">News</a></li>
+    <li> <a href="#contact">Contact</a></li>
+    <li class="logout">
+        <% if current_user %>
+        <%=  link_to raw('<i class="fa fa-sign-out"></i> ')  + "     LogOut" ,destroy_user_session_path, :method => :delete %>
+        <% else %>
+        <%=  link_to raw('<i class="fa fa-sign-in"></i> ')  + "     Sign in", new_user_session_path %>
+        <% end %> 
+    </li>
+</ul>

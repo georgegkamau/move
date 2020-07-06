@@ -6,7 +6,7 @@ class AppliesController < ApplicationController
   # GET /applies
   # GET /applies.json
   def index
-    @applies = current_user.applies 
+    @applies = current_user.applies
   end
 
   # GET /applies/1
@@ -65,6 +65,31 @@ class AppliesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def applications
+     
+    myapartmemts_ids = current_user.apartments.ids
+    applications_arr = []
+
+    # apt = Apartment.find 3
+    # @apply = apt.applies.ids
+    # # @applies = apt.applies.ids
+    # @applies = Apply.where(id: @apply ).all.order( 'created_at DESC' )
+    
+    
+
+    myapartmemts_ids.each do |x| 
+      apartment = Apartment.find x
+      applications_arr.push(apartment.applies.ids ) 
+    end
+    @apply = applications_arr.flatten
+    @applies = Apply.where(id: @apply ).all.order( 'created_at DESC' )
+  
+  end
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

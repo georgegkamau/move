@@ -122,8 +122,8 @@
                  <div class="apt-show-right-middle">
                     <div class="apt-show-right-middle-left">
                         <span class="apt-show-title "> Available </span>
-                        <span class="apt-show-date"> <%= @apartment.apartment_detail.available%> </span>
-                    </div>
+                        <span class="apt-show-date"> <%= time_tag(@apartment.apartment_detail.available)%> </span>
+                    </div> 
                     <div class="apt-show-right-middle-right">
                     <% if @my_apartment%>
                     <span class="applied-count"> Applies </span>

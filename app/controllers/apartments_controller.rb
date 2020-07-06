@@ -105,6 +105,17 @@ class ApartmentsController < ApplicationController
     end
   end
 
+
+  # my apartments
+  def myapartments
+    @apartments = current_user.apartments.all
+  end
+
+  def myteams 
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_apartment
